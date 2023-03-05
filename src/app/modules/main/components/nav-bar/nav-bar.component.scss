@@ -1,0 +1,31 @@
+@import "variables";
+
+
+:host{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    ul{
+        list-style: none;
+        display: flex;        
+        align-items: center; 
+        padding: 0px;
+        li{
+            margin: 0px 10px;
+            a{
+                color: $color-fifth;
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: opacity 200ms ease-in-out;
+                width: 100px;
+                display: block;
+                text-align: center;
+                &:hover{
+                    opacity: 0.6;
+                }
+
+            }
+        }
+    }
+}

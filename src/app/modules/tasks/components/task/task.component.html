@@ -1,0 +1,24 @@
+<div class="task-content">
+    <div class="title">
+        <span>{{data?.title}}</span><span *ngIf="!isActive()">({{getSpentTime()}})</span>
+    </div>
+    <div class="description">
+        <span>{{data?.description}}</span>
+    </div>
+    <div class="actions">
+        <button [disabled]="isRunning()" (click)="delete()"><img src="assets/images/delete.svg" title="Delete task"></button>
+        <button [disabled]="isRunning() || !isActive()" (click)="update()" title="Update task"><img src="assets/images/edit.svg"></button>
+        <button [disabled]="!isActive()" (click)="done()" title="Mark task as done"><img src="assets/images/done.svg"></button>
+    </div>
+</div>
+<div class="timer" >
+    <app-timer *ngIf="isActive()" #timer
+        [initialSeconds]="data?.spentTime" 
+        [initPlayed]="initPlayed" 
+        (onStart)="onTimerStart()" 
+        (onStop)="onTimerStop($event)"></app-timer>
+    <div class="state" *ngIf="!isActive()">
+        <img *ngIf="isCompleted()" class="completed" src="assets/images/completed.svg">
+        <img *ngIf="isTimeout()" class="timeout" src="assets/images/timeout.svg">
+    </div>
+</div>

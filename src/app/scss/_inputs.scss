@@ -1,0 +1,13 @@
+@import "variables";
+
+input[type=text], textarea{
+    background-color: $color-fifth;
+    border: 1px solid $color-fourth;
+    border-radius: 5px;
+    padding: 5px;
+    color: $color-first;
+    resize: none;
+    &:focus{
+        outline: none;
+    }
+}

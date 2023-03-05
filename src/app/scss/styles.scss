@@ -1,0 +1,13 @@
+@import "variables";
+@import "buttons";
+@import "inputs";
+
+
+* {
+    font-family: $font-family;
+    color: $color-first;
+}
+
+body{
+    background-color: $color-first;
+}

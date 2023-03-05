@@ -1,0 +1,19 @@
+<span *ngIf="!isEditMode()" class="title">New Task</span>
+<span *ngIf="isEditMode()" class="title">{{taskForm.get('title')?.value}} Task</span>
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <div class="fields">
+        <div class="field-item">
+            <label>Title</label>
+            <input type="text" formControlName="title" id="title">
+            <label class="error" *ngIf="taskForm.get('title')?.errors?.['required']">Title Required</label>
+        </div>
+        <div  class="field-item"> 
+            <label>Description</label>
+            <textarea formControlName="description"></textarea>
+        </div>
+    </div>
+    <div class="actions">
+        <button class="button" type="button" (click)="cancel()">Cancel</button>
+        <button class="button" type="submit" [disabled]="!taskForm.valid">Save</button>
+    </div>
+</form>

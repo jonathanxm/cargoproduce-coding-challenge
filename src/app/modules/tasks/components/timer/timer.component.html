@@ -1,0 +1,6 @@
+<div class="timer-graph" (mouseenter)="toggleButton()" (mouseleave)="toggleButton()">
+    <button class="play-pause" [ngClass]="{'paused': running, 'show': showButton}" (click)="toggleTimer()"></button>
+</div>
+
+
+<span>{{countDownTime}}</span>

@@ -1,0 +1,29 @@
+<div class="actions">
+    <button class="button" (click)="newTask()" title="New Task">New Task +</button>
+</div>
+
+<div class="task-list">
+    <span class="no-data" *ngIf="tasksData?.length == 0 && !apiWorking">Nothing to do yet</span>
+    <app-task 
+        *ngFor="let task of tasksData" [data]="task" 
+        (onDelete)="deleteTask(task)" 
+        (onUpdate)="updateTask(task)" 
+        (onStateChanged)="taskStateChanged(task, $event)">
+    </app-task>
+</div>
+
+<div class="popup-backdrop" [ngClass]="{'show': showTaskEditor}" >
+    <app-task-editor [initTask]="editingTask" (onSave)="taskSaved($event)" (onCancel)="editorClosed()">
+    
+    </app-task-editor>
+</div>
+
+<div class="popup-backdrop" [ngClass]="{'show': showConfirmDialog}" >
+    <app-confirm-dialog (result)="dialogResult($event)" [message]="currentConfirmMsg">
+
+    </app-confirm-dialog>
+</div>
+
+<div class="popup-backdrop" [ngClass]="{'show': apiWorking}">
+    <img src="assets/images/loader.svg">
+</div>

@@ -1,0 +1,21 @@
+@import "variables";
+
+:host{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        span{
+            color: $color-fifth;
+            font-size: $font-size-xl;
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+    }
+}

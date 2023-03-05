@@ -1,0 +1,21 @@
+ @import "variables";
+
+:host{
+    background-color: $color-fifth;
+    border-radius: 5px;
+    padding: 15px 10px;
+    width: 300px;
+
+    span{
+        font-size: $font-size-m;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .actions{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+}

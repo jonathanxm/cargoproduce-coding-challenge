@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "api-server": "json-server --watch tasks-data.js"
   },
   "private": true,
   "dependencies": {

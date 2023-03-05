@@ -1,0 +1,67 @@
+@import "variables";
+
+:host{
+    $completed: var(--completed);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    
+    .timer-graph {
+        width: 60px;
+        height: 60px;
+        background-image: conic-gradient($color-fourth $completed, $color-first 0%);
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .play-pause{
+            border: 0;
+            background: transparent;
+            box-sizing: border-box;
+            width: 0;
+            height: 40px;
+    
+            border-color: transparent transparent transparent $color-fifth;
+            transition: 100ms all ease;
+            cursor: pointer;
+    
+            border-style: solid;
+            border-width: 19px 0 19px 33px;
+
+            opacity: 0;
+
+            position: relative;
+            left: 7px;
+    
+            &.paused {
+                border-style: double;
+                border-width: 0px 2px 0px 30px;
+            }
+    
+            &.show{
+                opacity: 1;
+            }
+    
+            &:hover {
+                border-color: transparent transparent transparent $color-fifth;
+            }
+        }
+    }
+
+    span{
+        font-size: $font-size-s;
+        display: inline-block;
+        line-height: 20px;
+        height: 20px;
+    }
+}
+
+
+
+
+  
